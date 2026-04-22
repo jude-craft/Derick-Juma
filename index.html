@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +9,11 @@
     <title>Derick Juma | Mobile App Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body data-theme="dark">
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
@@ -25,7 +28,8 @@
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-                <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2">
                     <circle cx="12" cy="12" r="5"></circle>
                     <line x1="12" y1="1" x2="12" y2="3"></line>
                     <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -36,7 +40,8 @@
                     <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
                     <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                 </svg>
-                <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2">
                     <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                 </svg>
             </button>
@@ -48,22 +53,8 @@
         <div class="hero-container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <!-- Content will be injected by JavaScript -->
                 </div>
                 <div class="hero-image">
-                    <!-- 
-                        IMPORTANT: Place your profile image here
-                        1. Save your profile photo as 'profile.png' or 'profile.jpg'
-                        2. Place it in the same directory as this HTML file
-                        3. Update the src attribute in script.js (profileData.image)
-                        
-                        Recommended image specifications:
-                        - Square aspect ratio (1:1) - e.g., 800x800px
-                        - High quality (at least 600x600px)
-                        - Face clearly visible
-                        - Professional or semi-professional photo
-                        - PNG or JPG format
-                    -->
                     <div class="profile-image-container">
                         <img id="profileImage" src="" alt="Profile" class="profile-image">
                     </div>
@@ -77,7 +68,6 @@
         <div class="section-container">
             <h2 class="section-title">Skills & Expertise</h2>
             <div class="skills-grid" id="skillsGrid">
-                <!-- Skills will be injected by JavaScript -->
             </div>
         </div>
     </section>
@@ -100,49 +90,30 @@
                 <div class="contact-column contact-form-column">
                     <h2 class="section-title">Let's Connect</h2>
                     <p class="section-description">Have a project in mind? Reach out and let's work together</p>
-                    
+
                     <form class="contact-message-form" id="contactForm">
                         <div class="form-group">
-                            <input 
-                                type="text" 
-                                class="form-input" 
-                                id="name" 
-                                placeholder="Your name" 
-                                required
-                                aria-label="Full name"
-                            >
+                            <input type="text" class="form-input" id="name" placeholder="Your name" required
+                                aria-label="Full name">
                         </div>
                         <div class="form-group">
-                            <input 
-                                type="email" 
-                                class="form-input" 
-                                id="contactEmail" 
-                                placeholder="your@email.com" 
-                                required
-                                aria-label="Email address"
-                            >
+                            <input type="email" class="form-input" id="contactEmail" placeholder="your@email.com"
+                                required aria-label="Email address">
                         </div>
                         <div class="form-group">
-                            <textarea 
-                                class="form-input form-textarea" 
-                                id="message" 
-                                placeholder="Tell me about your project or opportunity..." 
-                                rows="5"
-                                required
-                                aria-label="Message"
-                            ></textarea>
+                            <textarea class="form-input form-textarea" id="message"
+                                placeholder="Tell me about your project or opportunity..." rows="5" required
+                                aria-label="Message"></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary btn-send">Send Message</button>
                         <p class="form-note">I'll get back to you as soon as possible</p>
                     </form>
                 </div>
 
-                <!-- Right Column - Contact Info & Links -->
                 <div class="contact-column contact-info">
                     <div class="contact-links-group">
                         <h3 class="contact-group-title">Direct Contact</h3>
                         <ul class="quick-links" id="directContact">
-                            <!-- Contact links will be injected by JavaScript -->
                         </ul>
                     </div>
 
@@ -184,4 +155,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
