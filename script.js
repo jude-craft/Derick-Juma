@@ -339,12 +339,12 @@ function updateActiveNavLink() {
  */
 function handleContactFormSubmit(event) {
     event.preventDefault();
-    
+
     const name = document.getElementById('name').value;
     const email = document.getElementById('contactEmail').value;
     const message = document.getElementById('message').value;
     const form = document.getElementById('contactForm');
-    
+
     // Create a data object for the contact message
     const contactData = {
         name: name,
@@ -353,29 +353,29 @@ function handleContactFormSubmit(event) {
         timestamp: new Date().toISOString(),
         source: 'portfolio-contact-form'
     };
-    
+
     // Log the contact data (in production, send to backend)
     console.log('Contact Form Submission:', contactData);
-    
+
     // Store locally (optional)
     const contacts = JSON.parse(localStorage.getItem('contact-messages')) || [];
     contacts.push(contactData);
     localStorage.setItem('contact-messages', JSON.stringify(contacts));
-    
+
     // Show success feedback
     const successMessage = document.createElement('div');
     successMessage.className = 'form-success-message';
     successMessage.textContent = '✓ Message sent! I\'ll get back to you soon.';
     form.parentElement.insertBefore(successMessage, form.nextSibling);
-    
+
     // Reset form
     form.reset();
-    
+
     // Remove success message after 5 seconds
     setTimeout(() => {
         successMessage.remove();
     }, 5000);
-    
+
     // TODO: Connect to backend email service here
     // Example integration points:
     // - EmailJS
