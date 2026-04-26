@@ -11,9 +11,9 @@ const profileData = {
     greeting: "Hi, I'm",
     role: "Mobile App Developer (Flutter & Kotlin)",
     bio: "Passionate mobile engineer crafting beautiful, high-performance applications for Android and iOS. I specialize in Flutter and Kotlin, building seamless user experiences that users love.",
-    image: "profile.jpeg", // Place your profile.png in the same directory as index.html
+    image: "profile.jpeg", 
     contact: {
-        email: "derick.juma@example.com",
+        email: "derekjude254@gmail.com",
         github: "https://github.com/jude-craft",
         linkedin: "https://linkedin.com/in/derickjuma",
         twitter: "https://twitter.com/derickjuma"
@@ -333,10 +333,6 @@ function updateActiveNavLink() {
 // INITIALIZATION
 // ===================================
 
-/**
- * Handle Contact Form Submission
- * Captures contact information and prepares for backend integration
- */
 function handleContactFormSubmit(event) {
     event.preventDefault();
 
@@ -433,8 +429,3 @@ if (document.readyState === 'loading') {
     initializeApp();
 }
 
-// ===================================
-// EXPORT FOR TESTING (Optional)
-// ===================================
-// Uncomment if you need to test individual functions
-// export { profileData, skillsData, projectsData, renderHero, renderSkills, renderProjects };
