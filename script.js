@@ -1,17 +1,13 @@
 // ===================================
-// DATA LAYER - Clean Architecture
+// DATA LAYER
 // ===================================
 
-/**
- * Profile Data Object
- * Contains all personal information for the portfolio
- */
 const profileData = {
     name: "Derick Juma",
     greeting: "Hi, I'm",
     role: "Mobile App Developer (Flutter & Kotlin)",
     bio: "Passionate mobile engineer crafting beautiful, high-performance applications for Android and iOS. I specialize in Flutter and Kotlin, building seamless user experiences that users love.",
-    image: "profile.jpeg", 
+    image: "profile.jpeg",
     contact: {
         email: "derekjude254@gmail.com",
         github: "https://github.com/jude-craft",
@@ -20,9 +16,6 @@ const profileData = {
     }
 };
 
-/**
- * Social Media Links with SVG Icons
- */
 const socialLinks = [
     {
         name: "GitHub",
@@ -46,10 +39,6 @@ const socialLinks = [
     }
 ];
 
-/**
- * Skills Data Array
- * Grouped by categories: Mobile, Backend, Tools
- */
 const skillsData = [
     {
         category: "Mobile Development",
@@ -94,16 +83,12 @@ const skillsData = [
     }
 ];
 
-/**
- * Projects Data Array
- * Each project should have: name, description, technologies, and optional links
- */
 const projectsData = [
     {
         name: "E-Commerce Mobile App",
         description: "A full-featured shopping app with product catalog, cart management, payment integration, and order tracking. Built with Flutter and Firebase.",
         technologies: ["Flutter", "Dart", "Firebase", "Stripe API"],
-        image: null, // Set to image path if you have screenshots
+        image: null,
         links: {
             github: "https://github.com/derickjuma/ecommerce-app",
             demo: null
@@ -141,14 +126,65 @@ const projectsData = [
     }
 ];
 
+const educationData = [
+    {
+        degree: "Bachelor of Science in Computer Science",
+        institution: "University of Nairobi",
+        period: "2018 — 2022",
+        description: "Focused on software engineering, mobile computing, and human–computer interaction. Final-year project on a cross-platform health-tracking app built with Flutter.",
+        achievements: [
+            "Graduated with First Class Honours",
+            "Dean's List 2020 – 2022",
+            "President, Mobile Developers Club"
+        ]
+    },
+    {
+        degree: "High School Diploma (KCSE)",
+        institution: "Alliance High School",
+        period: "2014 — 2017",
+        description: "Specialized in Mathematics, Physics, and Computer Studies. Led the school's coding club and represented the school in regional STEM competitions."
+    }
+];
+
+const certificationsData = [
+    {
+        name: "Associate Android Developer",
+        issuer: "Google",
+        date: "2024",
+        credentialUrl: "https://developers.google.com/certification/associate-android-developer"
+    },
+    {
+        name: "Flutter Development Bootcamp",
+        issuer: "The App Brewery",
+        date: "2023",
+        credentialUrl: null
+    },
+    {
+        name: "Firebase for Mobile Developers",
+        issuer: "Google Cloud",
+        date: "2023",
+        credentialUrl: null
+    },
+    {
+        name: "Kotlin for Android Developers",
+        issuer: "JetBrains Academy",
+        date: "2022",
+        credentialUrl: null
+    },
+    {
+        name: "Responsive Web Design",
+        issuer: "freeCodeCamp",
+        date: "2021",
+        credentialUrl: null
+    }
+];
+
+const certIcon = `<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"></circle><path d="M8.5 13.5 7 22l5-3 5 3-1.5-8.5"></path></svg>`;
+
 // ===================================
-// LOGIC LAYER - Rendering Functions
+// RENDERING
 // ===================================
 
-/**
- * Render Hero Section
- * Dynamically creates the hero content based on profileData
- */
 function renderHero() {
     const heroText = document.querySelector('.hero-text');
 
@@ -163,16 +199,11 @@ function renderHero() {
         </div>
     `;
 
-    // Set profile image
     const profileImage = document.getElementById('profileImage');
     profileImage.src = profileData.image;
-    profileImage.alt = `${profileData.name} - ${profileData.role}`;
+    profileImage.alt = `${profileData.name} — ${profileData.role}`;
 }
 
-/**
- * Render Skills Section
- * Creates skill category cards with chips
- */
 function renderSkills() {
     const skillsGrid = document.getElementById('skillsGrid');
 
@@ -188,19 +219,15 @@ function renderSkills() {
     `).join('');
 }
 
-/**
- * Render Projects Section
- * Creates project cards with 9:16 aspect ratio for mobile screenshots
- */
 function renderProjects() {
     const projectsGrid = document.getElementById('projectsGrid');
 
-    projectsGrid.innerHTML = projectsData.map((project, index) => `
-        <div class="project-card">
+    projectsGrid.innerHTML = projectsData.map(project => `
+        <article class="project-card">
             <div class="project-image-container">
                 ${project.image
-            ? `<img src="${project.image}" alt="${project.name}" class="project-image">`
-            : `<div class="project-placeholder">${project.name.charAt(0)}</div>`
+            ? `<img src="${project.image}" alt="${project.name}" class="project-image" loading="lazy">`
+            : `<div class="project-placeholder" aria-hidden="true">${project.name.charAt(0)}</div>`
         }
             </div>
             <div class="project-content">
@@ -213,27 +240,59 @@ function renderProjects() {
                 </div>
                 <div class="project-links">
                     ${project.links.github
-            ? `<a href="${project.links.github}" target="_blank" class="project-link">
-                            View Code →
-                        </a>`
+            ? `<a href="${project.links.github}" target="_blank" rel="noopener noreferrer" class="project-link">View Code →</a>`
             : ''
         }
                     ${project.links.demo
-            ? `<a href="${project.links.demo}" target="_blank" class="project-link">
-                            Live Demo →
-                        </a>`
+            ? `<a href="${project.links.demo}" target="_blank" rel="noopener noreferrer" class="project-link">Live Demo →</a>`
             : ''
         }
                 </div>
             </div>
-        </div>
+        </article>
     `).join('');
 }
 
-/**
- * Render Contact Section
- * Creates direct contact links
- */
+function renderEducation() {
+    const timeline = document.getElementById('educationTimeline');
+
+    timeline.innerHTML = educationData.map(item => `
+        <article class="education-item">
+            <span class="education-period">${item.period}</span>
+            <h3 class="education-degree">${item.degree}</h3>
+            <p class="education-institution">${item.institution}</p>
+            <p class="education-description">${item.description}</p>
+            ${item.achievements && item.achievements.length
+            ? `<ul class="education-achievements">
+                    ${item.achievements.map(a => `<li>${a}</li>`).join('')}
+                </ul>`
+            : ''
+        }
+        </article>
+    `).join('');
+}
+
+function renderCertifications() {
+    const grid = document.getElementById('certGrid');
+
+    grid.innerHTML = certificationsData.map(cert => `
+        <article class="cert-card">
+            <div class="cert-icon" aria-hidden="true">${certIcon}</div>
+            <div class="cert-body">
+                <h3 class="cert-name">${cert.name}</h3>
+                <p class="cert-issuer">${cert.issuer}</p>
+            </div>
+            <div class="cert-meta">
+                <span class="cert-date">${cert.date}</span>
+                ${cert.credentialUrl
+            ? `<a href="${cert.credentialUrl}" target="_blank" rel="noopener noreferrer" class="cert-link">Verify →</a>`
+            : ''
+        }
+            </div>
+        </article>
+    `).join('');
+}
+
 function renderContact() {
     const directContact = document.getElementById('directContact');
 
@@ -249,18 +308,14 @@ function renderContact() {
     `).join('');
 }
 
-/**
- * Render Social Links
- * Creates social media icon links in the footer
- */
 function renderSocialLinks() {
     const socialLinksContainer = document.getElementById('socialLinks');
 
     socialLinksContainer.innerHTML = socialLinks.map(social => `
-        <a href="${social.url}" 
-           target="_blank" 
-           rel="noopener noreferrer" 
-           class="social-link" 
+        <a href="${social.url}"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="social-link"
            title="${social.name}"
            aria-label="${social.name}">
             ${social.icon}
@@ -269,163 +324,233 @@ function renderSocialLinks() {
 }
 
 // ===================================
-// THEME TOGGLE FUNCTIONALITY
+// THEME
 // ===================================
 
-/**
- * Initialize Theme
- * Sets the theme based on localStorage or system preference
- */
 function initializeTheme() {
     const savedTheme = localStorage.getItem('theme');
     const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
     const theme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
     document.body.setAttribute('data-theme', theme);
 }
 
-/**
- * Toggle Theme
- * Switches between dark and light mode
- */
 function toggleTheme() {
     const currentTheme = document.body.getAttribute('data-theme');
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
     document.body.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
 }
 
 // ===================================
-// SMOOTH SCROLL & ACTIVE NAV LINK
+// NAV: scroll-spy + mobile menu
 // ===================================
 
-/**
- * Update Active Navigation Link
- * Highlights the current section in the navbar
- */
-function updateActiveNavLink() {
+function setupScrollSpy() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
 
-    window.addEventListener('scroll', () => {
-        let current = '';
-
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-
-            if (window.pageYOffset >= sectionTop - 200) {
-                current = section.getAttribute('id');
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.id;
+                navLinks.forEach(link => {
+                    const isActive = link.getAttribute('href') === `#${id}`;
+                    link.classList.toggle('active', isActive);
+                    if (isActive) link.setAttribute('aria-current', 'true');
+                    else link.removeAttribute('aria-current');
+                });
             }
         });
+    }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
 
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
-                link.classList.add('active');
-            }
-        });
+    sections.forEach(section => observer.observe(section));
+}
+
+function setupMobileMenu() {
+    const toggle = document.getElementById('navToggle');
+    const menu = document.getElementById('navMenu');
+
+    const close = () => {
+        menu.classList.remove('open');
+        toggle.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+    };
+
+    toggle.addEventListener('click', () => {
+        const isOpen = menu.classList.toggle('open');
+        toggle.classList.toggle('open', isOpen);
+        toggle.setAttribute('aria-expanded', String(isOpen));
     });
+
+    menu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', close);
+    });
+}
+
+function setupNavbarScrollShadow() {
+    const navbar = document.getElementById('navbar');
+    const onScroll = () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 50);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+}
+
+// ===================================
+// SCROLL TO TOP
+// ===================================
+
+function setupScrollToTop() {
+    const btn = document.getElementById('scrollTop');
+    const onScroll = () => {
+        btn.classList.toggle('visible', window.scrollY > 400);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    btn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    onScroll();
+}
+
+// ===================================
+// SCROLL REVEAL
+// ===================================
+
+function setupScrollReveal() {
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const targets = document.querySelectorAll('.reveal');
+
+    if (reduced) {
+        targets.forEach(el => el.classList.add('in-view'));
+        return;
+    }
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12 });
+
+    targets.forEach(el => observer.observe(el));
+}
+
+// ===================================
+// CONTACT FORM
+// ===================================
+
+function showFormError(input, message) {
+    input.classList.add('has-error');
+    let hint = input.parentElement.querySelector('.form-error');
+    if (!hint) {
+        hint = document.createElement('p');
+        hint.className = 'form-error';
+        input.parentElement.appendChild(hint);
+    }
+    hint.textContent = message;
+}
+
+function clearFormError(input) {
+    input.classList.remove('has-error');
+    const hint = input.parentElement.querySelector('.form-error');
+    if (hint) hint.remove();
+}
+
+function validateContactForm(name, email, message) {
+    let valid = true;
+    if (!name.value.trim()) {
+        showFormError(name, 'Please enter your name.');
+        valid = false;
+    } else clearFormError(name);
+
+    const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRe.test(email.value.trim())) {
+        showFormError(email, 'Please enter a valid email address.');
+        valid = false;
+    } else clearFormError(email);
+
+    if (message.value.trim().length < 10) {
+        showFormError(message, 'Please write at least 10 characters.');
+        valid = false;
+    } else clearFormError(message);
+
+    return valid;
+}
+
+function handleContactFormSubmit(event) {
+    event.preventDefault();
+
+    const name = document.getElementById('name');
+    const email = document.getElementById('contactEmail');
+    const message = document.getElementById('message');
+    const form = document.getElementById('contactForm');
+
+    if (!validateContactForm(name, email, message)) return;
+
+    const contactData = {
+        name: name.value.trim(),
+        email: email.value.trim(),
+        message: message.value.trim(),
+        timestamp: new Date().toISOString(),
+        source: 'portfolio-contact-form'
+    };
+
+    console.log('Contact Form Submission:', contactData);
+
+    const contacts = JSON.parse(localStorage.getItem('contact-messages')) || [];
+    contacts.push(contactData);
+    localStorage.setItem('contact-messages', JSON.stringify(contacts));
+
+    const existing = form.parentElement.querySelector('.form-success-message');
+    if (existing) existing.remove();
+
+    const successMessage = document.createElement('div');
+    successMessage.className = 'form-success-message';
+    successMessage.textContent = '✓ Message sent! I\'ll get back to you soon.';
+    form.parentElement.insertBefore(successMessage, form.nextSibling);
+
+    form.reset();
+
+    setTimeout(() => successMessage.remove(), 5000);
+
+    // TODO: Connect to backend email service (EmailJS / SendGrid / Firebase Functions / custom endpoint)
 }
 
 // ===================================
 // INITIALIZATION
 // ===================================
 
-function handleContactFormSubmit(event) {
-    event.preventDefault();
-
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('contactEmail').value;
-    const message = document.getElementById('message').value;
-    const form = document.getElementById('contactForm');
-
-    // Create a data object for the contact message
-    const contactData = {
-        name: name,
-        email: email,
-        message: message,
-        timestamp: new Date().toISOString(),
-        source: 'portfolio-contact-form'
-    };
-
-    // Log the contact data (in production, send to backend)
-    console.log('Contact Form Submission:', contactData);
-
-    // Store locally (optional)
-    const contacts = JSON.parse(localStorage.getItem('contact-messages')) || [];
-    contacts.push(contactData);
-    localStorage.setItem('contact-messages', JSON.stringify(contacts));
-
-    // Show success feedback
-    const successMessage = document.createElement('div');
-    successMessage.className = 'form-success-message';
-    successMessage.textContent = '✓ Message sent! I\'ll get back to you soon.';
-    form.parentElement.insertBefore(successMessage, form.nextSibling);
-
-    // Reset form
-    form.reset();
-
-    // Remove success message after 5 seconds
-    setTimeout(() => {
-        successMessage.remove();
-    }, 5000);
-
-    // TODO: Connect to backend email service here
-    // Example integration points:
-    // - EmailJS
-    // - SendGrid API
-    // - Firebase Cloud Functions
-    // - Custom backend endpoint (Node.js/Python)
-}
-
-/**
- * Initialize Application
- * Runs when DOM is fully loaded
- */
 function initializeApp() {
-    // Set current year in footer
     document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-    // Initialize theme
     initializeTheme();
 
-    // Render all sections
     renderHero();
     renderSkills();
     renderProjects();
+    renderEducation();
+    renderCertifications();
     renderContact();
     renderSocialLinks();
 
-    // Set up event listeners
-    const themeToggle = document.getElementById('themeToggle');
-    themeToggle.addEventListener('click', toggleTheme);
+    document.getElementById('themeToggle').addEventListener('click', toggleTheme);
 
-    // Contact form submission
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', handleContactFormSubmit);
     }
 
-    // Update active navigation links
-    updateActiveNavLink();
-
-    // Add scroll event for navbar background
-    window.addEventListener('scroll', () => {
-        const navbar = document.getElementById('navbar');
-        if (window.scrollY > 50) {
-            navbar.style.boxShadow = 'var(--shadow-md)';
-        } else {
-            navbar.style.boxShadow = 'none';
-        }
-    });
+    setupScrollSpy();
+    setupMobileMenu();
+    setupNavbarScrollShadow();
+    setupScrollToTop();
+    setupScrollReveal();
 }
 
-// Run initialization when DOM is ready
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initializeApp);
 } else {
     initializeApp();
 }
-
