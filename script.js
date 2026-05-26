@@ -21,7 +21,7 @@ const profileData = {
     contact: {
         email: "derekjude254@gmail.com",
         github: "https://github.com/jude-craft",
-        linkedin: "https://linkedin.com/in/derickjuma",
+        linkedin: "https://www.linkedin.com/in/derick-juma/",
         twitter: "https://x.com/Jude1110641"
     }
 };
@@ -34,12 +34,12 @@ const socialLinks = [
     },
     {
         name: "LinkedIn",
-        url: "https://linkedin.com/in/derickjuma",
+        url: "https://www.linkedin.com/in/derick-juma/",
         icon: `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.475-2.236-1.986-2.236-1.081 0-1.722.722-2.002 1.413-.103.249-.129.597-.129.946v5.446h-3.554s.047-8.842 0-9.769h3.554v1.38c.429-.663 1.198-1.606 2.915-1.606 2.131 0 3.731 1.391 3.731 4.384v5.611zM5.337 8.855c-1.144 0-1.915-.758-1.915-1.706 0-.955.771-1.706 1.96-1.706 1.188 0 1.914.751 1.938 1.706 0 .948-.75 1.706-1.983 1.706zm1.946 11.597H3.392V9.683h3.891v10.769zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>`
     },
     {
         name: "X",
-        url: "https://twitter.com/derickjuma",
+        url: "https://x.com/Jude1110641",
         icon: `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" fill="currentColor"/></svg>`
     },
     {
@@ -51,7 +51,7 @@ const socialLinks = [
 
 const experienceData = [
     {
-        company: "The Brand Company",
+        company: "The Brand AI",
         role: "Flutter Developer",
         duration: "August 2025 — Present",
         bullets: [
@@ -81,7 +81,6 @@ const skillsData = [
             "Kotlin",
             "Jetpack Compose",
             "Android SDK",
-            "iOS Development",
             "Material Design",
             "State Management (Bloc, Provider, Riverpod)",
             "Firebase",
@@ -175,6 +174,14 @@ const educationData = [
 
 const certificationsData = [
     {
+        name: "Power Learn Project (PLP) Software Development",
+        issuer: "Power Learn Project",
+        date: "November 2025",
+        image: "certificates/plp-certificate-1.png",
+        description: "Completed a 16-week Software Development program covering Python, Web Tech, and Databases, with a core specialization in Mobile-Friendly PWAs using Dart and Flutter.",
+        credentialUrl: null
+    },
+    {
         name: "ALX Freelancer Academy",
         issuer: "ALX Ventures",
         date: "March 2026",
@@ -190,14 +197,7 @@ const certificationsData = [
         description: "Graduated from the AI Career Essentials program, mastering the practical application of AI tools. Issued May 2026.",
         credentialUrl: "https://ehub.alxafrica.com/ob3/verify-certificate/8a44701d-1b73-47fb-90eb-6ec9f5469c7c"
     },
-    {
-        name: "Power Learn Project (PLP) Software Development",
-        issuer: "Power Learn Project",
-        date: "November 2025",
-        image: "certificates/plp-certificate-1.png",
-        description: "Completed a 16-week Software Development program covering Python, Web Tech, and Databases, with a core specialization in Mobile-Friendly PWAs using Dart and Flutter.",
-        credentialUrl: null
-    },
+
     {
         name: "Kaggle Python",
         issuer: "Kaggle",
