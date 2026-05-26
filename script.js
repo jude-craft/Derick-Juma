@@ -20,6 +20,7 @@ const profileData = {
     image: "profile.jpeg",
     contact: {
         email: "derekjude254@gmail.com",
+        whatsapp: "+254117598248",
         github: "https://github.com/jude-craft",
         linkedin: "https://www.linkedin.com/in/derick-juma/",
         twitter: "https://x.com/Jude1110641"
@@ -63,7 +64,7 @@ const experienceData = [
     {
         company: "Kilimo Afya Startup",
         role: "Full-Stack Mobile Engineer",
-        duration: "December 2025 — March 2026",
+        duration: "December 2025 —",
         bullets: [
             "Engineered automated data scraping pipelines using Python and cron jobs to aggregate multi-source data into MongoDB.",
             "Developed robust Flask APIs to serve backend data efficiently.",
@@ -376,7 +377,7 @@ function renderContact() {
 
     const contactLinks = [
         { name: 'Email Me', url: `mailto:${profileData.contact.email}` },
-        { name: 'GitHub', url: profileData.contact.github },
+        { name: 'WhatsApp', url: `https://wa.me/${profileData.contact.whatsapp.replace(/[^0-9]/g, '')}` },
         { name: 'LinkedIn', url: profileData.contact.linkedin },
         { name: 'X', url: profileData.contact.twitter }
     ];
