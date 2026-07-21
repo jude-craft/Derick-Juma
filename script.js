@@ -148,6 +148,16 @@ const projectsData = [
         }
     },
     {
+        name: "Unistay",
+        description: "A customized housing recommendation platform for Meru University students. It serves predictions by fetching data from a PostgreSQL database, powered by XGBoost and Random Forest models trained on primary data.",
+        technologies: ["Flutter", "PostgreSQL", "XGBoost", "Random Forest"],
+        image: "screenshots/unistay.png",
+        links: {
+            github: "https://github.com/jude-craft/Unistay.git",
+            demo: null
+        }
+    },
+    {
         name: "ShopMate",
         description: "An inventory and sales management application built to help shopkeepers accurately maintain stock records, log daily sales, and actively track their profit margins.",
         technologies: ["Flutter", "Dart", "Database Management"],
@@ -156,17 +166,8 @@ const projectsData = [
             github: "https://github.com/jude-craft/ShopMate.git",
             demo: null
         }
-    },
-    {
-        name: "Unistay",
-        description: "A customized housing recommendation platform for Meru University students. It serves predictions by fetching data from a PostgreSQL database, powered by XGBoost and Random Forest models trained on primary data.",
-        technologies: ["Flutter", "PostgreSQL", "XGBoost", "Random Forest"],
-        image: null,
-        links: {
-            github: "https://github.com/jude-craft/Unistay.git",
-            demo: null
-        }
     }
+    
 ];
 
 const educationData = [
