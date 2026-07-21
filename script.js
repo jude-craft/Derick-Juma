@@ -15,7 +15,7 @@ const EMAILJS_CONFIG = {
 const profileData = {
     name: "Derick Juma",
     greeting: "Hi, I'm",
-    role: "Dual-Stack Mobile Engineer",
+    role: "Mobile Software Engineer",
     bio: "I architect and build scalable mobile applications using Flutter and Native Kotlin. I focus on clean architecture, robust backend integration, and delivering high-performance user experiences from the first line of code to Play Store deployment.",
     image: "profile.jpeg",
     contact: {
@@ -53,8 +53,8 @@ const socialLinks = [
 const experienceData = [
     {
         company: "The Brand AI",
-        role: "Flutter Developer",
-        duration: "August 2025 — Present",
+        role: "Flutter Developer (Intern)",
+        duration: "August 2025 — May 2026",
         bullets: [
             "Spearheading the modernization of the mobile application architecture and user interface.",
             "Successfully integrated the Paystack payment gateway to enable secure and efficient user transactions.",
@@ -118,13 +118,23 @@ const skillsData = [
 
 const projectsData = [
     {
+        name: "InVoice",
+        description: "A B2B productivity tool that lets field tradespeople — agency owners, solopreneurs, freelancers, plumbers, electricians and contractors — generate PDF invoices entirely through voice or text dictation. Live on the Google Play Store.",
+        technologies: ["Flutter", "Dart", "Speech-to-Text", "PDF Generation"],
+        image: "screenshots/InVoice.png",
+        links: {
+            github: null,
+            demo: "https://play.google.com/store/apps/details?id=com.judecrafts.invoice"
+        }
+    },
+    {
         name: "PesaLens",
-        description: "An automated, local-first expense tracking application designed to securely parse and log M-Pesa transactions. Currently managing closed testing for rollout.",
+        description: "An automated, local-first expense tracking application designed to securely parse and log M-Pesa transactions. Live in production on the Google Play Store.",
         technologies: ["Kotlin", "Jetpack Compose", "Android", "Room DB"],
         image: "screenshots/PesaLens.png",
         links: {
             github: null,
-            demo: null
+            demo: "https://play.google.com/store/apps/details?id=com.judecraft.pesalens"
         }
     },
     {
